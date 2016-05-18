@@ -8,63 +8,14 @@ var Link = ReactRouter.Link;
 var IndexRoute = ReactRouter.IndexRoute;
 var browserHistory = ReactRouter.browserHistory;
 
-// A simple navigation component
-var Navigation = React.createClass({
-  render: function() {
-    return (
-      <nav className="main-menu">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About Us</Link>
-          </li>
-          <li>
-            <Link to="/team">Meet the team</Link>
-          </li>
-        </ul>
-      </nav>
-    );
-  }
-});
+var App = require('./components/App');
+var Home = require('./components/Home');
+var Order = require('./components/Order');
 
-// The main application layout
-// this.props.children will be set by React Router depending on the current route
-var App = React.createClass({
-  render: function() {
-    return (
-      <main>
-        <Navigation/>
-        {this.props.children}
-      </main>
-    );
-  }
-});
 
-// home "page"
-var Home = React.createClass({
-  render: function() {
-    return (
-      <div>
-        <h1>Homepage!</h1>
-        <p>Welcome to the homepage! Try to click on a link in the nav, then click the browser back button.</p>
-      </div>
-    );
-  }
-});
 
-// about "page"
-var About = React.createClass({
-  render: function() {
-    return (
-      <div>
-        <h1>About Page!</h1>
-        <p>Welcome to the about page!</p>
-      </div>
-    );
-  }
-});
+
+
 
 // team "page"
 var Team = React.createClass({
@@ -104,7 +55,7 @@ var routes = (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
-      <Route path="about" component={About}/>
+      <Route path="order" component={Order}/>
       <Route path="team" component={Team}/>
       <Route path="*" component={NotFound}/>
     </Route>
