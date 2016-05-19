@@ -12,13 +12,18 @@ var App = React.createClass({
           {this.props.children}
         </main>
         <footer>
+          <div className='footer-callToAction'>
           <p>Looking for a bite of funniness: 888-888-888</p>
-          &copy; 2016 MINI pizza
+         
+          </div>
+          <p>&copy; 2016 MINI pizza</p>
         
         </footer>
-      </div>  
+      </div>
     );
   }
 });
 
 module.exports = App;
+
+//src='/image/pizza-stand-lego.jpg'/>
